@@ -145,25 +145,8 @@ is_male = {
     'Миша': True,
 }
 
-""" boys={'Мальчики': 0}
-girls={'Девочки': 0}
-
-for name in school:
-
-    for gender in name['students']:
-        if is_male[gender['first_name']] == False:
-            girls['Девочки'] +=1
-        else:
-            boys['Мальчики']+=1
 
 
-if boys
-
-print(girls)
-print(boys) """
-dif=0
-girl=0
-boyy=0
 for name in school:
     girl = 0
     boys = 0
@@ -177,21 +160,3 @@ for name in school:
         print(f"Больше всего мальчиков в классе {name['class']}")
     else:
         print(f"Больше всего девочек в классе {name['class']}")
-
-
-
-
-
-
-
-    
-
-
-
-
-"""  if boys > girl:
-        
-        print(f"Больше всего мальчиков в классе {name['class']}")
-    else:
-        print(f"Больше всего девочек в классе {name['class']}")
- """
