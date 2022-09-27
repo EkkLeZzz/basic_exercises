@@ -4,6 +4,7 @@
 # Вася: 1
 # Маша: 2
 # Петя: 2
+from collections import Counter
 
 students = [
     {'first_name': 'Вася'},
@@ -12,21 +13,39 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Петя'},
 ]
-# ???
-
+count=0
+dict_stud={}
+for name in students:
+    if name['first_name'] not in dict_stud.keys():
+        dict_stud[name['first_name']] = 0
+    dict_stud[name['first_name']]+=1
+    
+print(dict_stud, '\n')
 
 # Задание 2
 # Дан список учеников, нужно вывести самое часто повторящееся имя
 # Пример вывода:
 # Самое частое имя среди учеников: Маша
-students = [
+students1 = [
     {'first_name': 'Вася'},
     {'first_name': 'Петя'},
     {'first_name': 'Маша'},
     {'first_name': 'Маша'},
     {'first_name': 'Оля'},
 ]
-# ???
+
+
+dict_stud={}
+for name in students1:
+    if name['first_name'] not in dict_stud.keys():
+        dict_stud[name['first_name']] = 0
+    dict_stud[name['first_name']]+=1
+
+print("Самое встречающееся имя среди учеников: ",max(dict_stud, key=dict_stud.get))
+print('\n')
+
+
+
 
 
 # Задание 3
@@ -51,7 +70,28 @@ school_students = [
         {'first_name': 'Саша'},
     ],
 ]
-# ???
+
+dict_stud={}
+for name in school_students[0]:
+    if name['first_name'] not in dict_stud.keys():
+        dict_stud[name['first_name']] = 0
+    dict_stud[name['first_name']]+=1
+print("Самое встречающееся имя среди учеников первого класса: ",max(dict_stud, key=dict_stud.get))
+dict_stud={}
+
+for name in school_students[1]:
+    if name['first_name'] not in dict_stud.keys():
+        dict_stud[name['first_name']] = 0
+    dict_stud[name['first_name']]+=1
+print("Самое встречающееся имя среди учеников второго класса: ",max(dict_stud, key=dict_stud.get))
+dict_stud={}
+
+for name in school_students[2]:
+    if name['first_name'] not in dict_stud.keys():
+        dict_stud[name['first_name']] = 0
+    dict_stud[name['first_name']]+=1
+print("Самое встречающееся имя среди учеников третьего класса: ",max(dict_stud, key=dict_stud.get))
+
 
 
 # Задание 4
@@ -63,7 +103,7 @@ school_students = [
 school = [
     {'class': '2a', 'students': [{'first_name': 'Маша'}, {'first_name': 'Оля'}]},
     {'class': '2б', 'students': [{'first_name': 'Олег'}, {'first_name': 'Миша'}]},
-    {'class': '2б', 'students': [{'first_name': 'Даша'}, {'first_name': 'Олег'}, {'first_name': 'Маша'}]},
+    {'class': '2в', 'students': [{'first_name': 'Даша'}, {'first_name': 'Олег'}, {'first_name': 'Маша'}]},
 ]
 is_male = {
     'Олег': True,
@@ -72,7 +112,20 @@ is_male = {
     'Миша': True,
     'Даша': False,
 }
-# ???
+dict_stud ={}
+
+for name in school:
+    girl = 0
+    boys = 0
+    for gender in name['students']:
+        if is_male[gender['first_name']] == True:
+            boys+=1
+        else:
+            girl+=1
+    print(f"В классе {name['class']} девочки {girl}, мальчики {boys} ")
+print(f'\n \n \n \n \n \n')
+
+
 
 
 # Задание 5
@@ -91,5 +144,54 @@ is_male = {
     'Олег': True,
     'Миша': True,
 }
-# ???
 
+""" boys={'Мальчики': 0}
+girls={'Девочки': 0}
+
+for name in school:
+
+    for gender in name['students']:
+        if is_male[gender['first_name']] == False:
+            girls['Девочки'] +=1
+        else:
+            boys['Мальчики']+=1
+
+
+if boys
+
+print(girls)
+print(boys) """
+dif=0
+girl=0
+boyy=0
+for name in school:
+    girl = 0
+    boys = 0
+    for gender in name['students']:
+        if is_male[gender['first_name']] == True:
+            boys+=1
+        else:
+            girl+=1
+    if boys > girl:
+        
+        print(f"Больше всего мальчиков в классе {name['class']}")
+    else:
+        print(f"Больше всего девочек в классе {name['class']}")
+
+
+
+
+
+
+
+    
+
+
+
+
+"""  if boys > girl:
+        
+        print(f"Больше всего мальчиков в классе {name['class']}")
+    else:
+        print(f"Больше всего девочек в классе {name['class']}")
+ """
